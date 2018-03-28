@@ -29,5 +29,6 @@
 	show-ignored = ls-files -io --directory --exclude-standard
 [core]
 	editor = vim
+	pager = "diff-so-fancy | less --tabs 4 -R"
 [push]
 	default = upstream
