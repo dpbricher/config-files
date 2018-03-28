@@ -1,0 +1,33 @@
+[user]
+	name = "Dean Richer"
+	email = dpbricher@gmail.com
+[alias]
+	a = add
+	b = branch
+	c = commit
+	l = log
+	m = merge
+	o = checkout
+	ph = push
+	pl = pull
+	r = rebase
+	rt = reset
+	sh = stash
+	sl = status
+	t = tag
+
+	d = diff --ignore-space-at-eol
+	s = status -s
+	ds = diff --staged --ignore-space-at-eol
+	ln = log --name-status
+	ls = log --oneline
+	po = push origin
+	puo = push -u origin
+	ri = rebase -i
+	rt1 = reset HEAD~
+
+	show-ignored = ls-files -io --directory --exclude-standard
+[core]
+	editor = vim
+[push]
+	default = upstream
