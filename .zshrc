@@ -1,4 +1,4 @@
-source /home/dricher/.antigen/antigen.zsh
+source /usr/local/share/antigen/antigen.zsh
 
 ZSH_TMUX_AUTOSTART=true
 export PATH=$PATH:/usr/local/bin
@@ -36,4 +36,9 @@ alias ml="marks"
 alias d="docker"
 alias dc="docker-compose"
 
-alias open="xdg-open"
+export PATH=$PATH:/usr/local/bin
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export PATH=$PATH:~/bin
