@@ -31,3 +31,5 @@
 	editor = vim
 [push]
 	default = upstream
+[pager]
+	branch = false

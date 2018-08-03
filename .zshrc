@@ -24,5 +24,11 @@ alias ma="mark"
 alias md="unmark"
 alias ml="marks"
 
-alias open="xdg-open"
+# this alias is now being included by default from somewhere else; not sure where yet though ':D
+#alias open="xdg-open"
 alias dk="docker"
+alias dcp="docker-compose"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
