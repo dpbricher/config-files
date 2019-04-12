@@ -29,6 +29,8 @@
 	show-ignored = ls-files -io --directory --exclude-standard
 [core]
 	editor = vim
+[pull]
+	rebase = true
 [push]
 	default = upstream
 [pager]
