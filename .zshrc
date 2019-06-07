@@ -36,9 +36,10 @@ alias ml="marks"
 alias d="docker"
 alias dc="docker-compose"
 
+alias ec2-ls='aws ec2 describe-instances --query "Reservations[*].Instances[*].{Name:Tags[?Key==\`Name\`].Value[] | [0], PublicIP:PublicIpAddress, PrivateIP:PrivateIpAddress Status:State.Name}"'
+
 export PATH=$PATH:/usr/local/bin
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-export PATH=$PATH:~/bin
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion

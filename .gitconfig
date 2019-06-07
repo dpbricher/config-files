@@ -19,12 +19,14 @@
 	d = diff --ignore-space-at-eol
 	s = status -s
 	ds = diff --staged --ignore-space-at-eol
+	dnl = diff --ignore-space-at-eol ':!*package-lock.json'
 	ln = log --name-status
 	ls = log --oneline
 	po = push origin
 	puo = push -u origin
 	ri = rebase -i
 	rt1 = reset HEAD~
+	sns = show --name-status
 
 	show-ignored = ls-files -io --directory --exclude-standard
 [core]
