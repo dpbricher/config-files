@@ -1,6 +1,6 @@
 [user]
-	name = "Dean Richer"
-	email = dpbricher@gmail.com
+	name = Dean Richer
+	email = dean.richer@refinitiv.com
 [alias]
 	a = add
 	b = branch
@@ -31,9 +31,19 @@
 	show-ignored = ls-files -io --directory --exclude-standard
 [core]
 	editor = vim
+	excludesfile = /Users/dricher/.gitignore
 [pull]
 	rebase = true
 [push]
 	default = upstream
 [pager]
 	branch = false
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[url "git@git.sami.int.thomsonreuters.com:"]
+	insteadof = https://git.sami.int.thomsonreuters.com/
+[color]
+	ui = auto
