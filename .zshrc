@@ -1,3 +1,7 @@
+# editor
+export EDITOR=vim
+export ZSH_TMUX_AUTOSTART=true
+
 source /home/dricher/.antigen/antigen.zsh
 
 # Load the oh-my-zsh's library.
@@ -9,6 +13,9 @@ antigen bundle jump
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting
 
+# Bundle tmux plugin solely for autostart
+antigen bundle tmux
+
 # Load the theme.
 #antigen theme agnoster
 antigen theme robbyrussell
@@ -17,6 +24,8 @@ antigen theme robbyrussell
 antigen apply
 
 # aliases
+unalias d
+
 alias g="git"
 
 alias mg="jump"
@@ -24,5 +33,6 @@ alias ma="mark"
 alias md="unmark"
 alias ml="marks"
 
-alias open="xdg-open"
-alias dk="docker"
+alias o="xdg-open"
+alias d="docker"
+alias dc="docker-compose"
