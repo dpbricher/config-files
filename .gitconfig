@@ -1,6 +1,6 @@
 [user]
 	name = "Dean Richer"
-	email = dpbricher@gmail.com
+	email = dean.richer@complyadvantage.com
 [alias]
 	a = add
 	b = branch
@@ -29,6 +29,9 @@
 	show-ignored = ls-files -io --directory --exclude-standard
 [core]
 	editor = vim
+	excludesfile = /home/dricher/.gitignore
+[pull]
+	rebase = true
 [push]
 	default = upstream
 [pager]

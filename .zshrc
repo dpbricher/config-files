@@ -2,7 +2,7 @@
 export EDITOR=vim
 export ZSH_TMUX_AUTOSTART=true
 
-source /home/dricher/.antigen/antigen.zsh
+source /home/deanr/.antigen/antigen.zsh
 
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
@@ -24,7 +24,7 @@ antigen theme robbyrussell
 antigen apply
 
 # aliases
-unalias d
+#unalias d
 
 alias g="git"
 
@@ -36,3 +36,13 @@ alias ml="marks"
 alias o="xdg-open"
 alias d="docker"
 alias dc="docker-compose"
+alias k="kubectl"
+alias kk="kubectl krew"
+
+export PATH="$PATH:${KREW_ROOT:-$HOME/.krew}/bin"
+export KUBECONFIG="$KUBECONFIG:/home/deanr/.kube/config"
+
+export AWS_PG_ACCOUNT_ID=724201195915
+export AWS_STG_ACCOUNT_ID=998259592149
+export AWS_PRD_ACCOUNT_ID=899289360083
+export AWS_SPRD_ACCOUNT_ID=871716277715
