@@ -39,8 +39,9 @@ alias dc="docker-compose"
 alias k="kubectl"
 alias kk="kubectl krew"
 
-export PATH="$PATH:${KREW_ROOT:-$HOME/.krew}/bin"
+#export PATH="$PATH:${KREW_ROOT:-$HOME/.krew}/bin"
 export KUBECONFIG="$KUBECONFIG:/home/deanr/.kube/config"
+export XDG_CONFIG_HOME="$HOME/.xdg-config"
 
 export AWS_PG_ACCOUNT_ID=724201195915
 export AWS_STG_ACCOUNT_ID=998259592149

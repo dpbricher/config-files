@@ -29,7 +29,7 @@
 	show-ignored = ls-files -io --directory --exclude-standard
 [core]
 	editor = vim
-	excludesfile = /home/dricher/.gitignore
+	excludesfile = /home/deanr/.gitignore
 [pull]
 	rebase = true
 [push]
