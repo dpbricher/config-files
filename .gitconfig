@@ -16,6 +16,7 @@
 	sl = status
 	t = tag
 
+	bm = branch --merged
 	d = diff --ignore-space-at-eol
 	s = status -s
 	ds = diff --staged --ignore-space-at-eol
@@ -26,6 +27,13 @@
 	ri = rebase -i
 	rt1 = reset HEAD~
 
+	# delete all merged branches other than main, master and the current branch
+	bm-rm = !git branch --merged | grep -Ev -e '^(\\*|  ma(in|ster))' | xargs git branch -d
+	# fetch origin and merge local default branch with upstream
+	fm = !git remote show origin | sed -n "'/^  HEAD branch/ {s/.*: //p; q}'" | xargs -I ph git fetch origin ph:ph
+	# switch to default branch
+	od = !git remote show origin | sed -n "'/^  HEAD branch/ {s/.*: //p; q}'" | xargs git switch
+	# list all files currently ignored by git
 	show-ignored = ls-files -io --directory --exclude-standard
 [core]
 	editor = vim
