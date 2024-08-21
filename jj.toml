@@ -1,0 +1,21 @@
+[aliases]
+b = ["branch", "--no-pager"]
+c = ["commit"]
+d = ["diff"]
+e = ["edit"]
+f = ["git", "fetch"]
+g = ["git"]
+l = ["log"]
+n = ["new"]
+p = ["git", "push"]
+r = ["rebase"]
+s = ["status", "--no-pager"]
+
+[revset-aliases]
+C = '@+'
+P = '@-'
+"d(x)" = 'description(x)'
+
+[user]
+name = "Dean Richer"
+email = "dean.richer@complyadvantage.com"
