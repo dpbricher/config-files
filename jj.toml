@@ -5,6 +5,7 @@ d = ["diff"]
 e = ["edit"]
 f = ["git", "fetch"]
 g = ["git"]
+h = ["help"]
 l = ["log"]
 n = ["new"]
 p = ["git", "push"]
@@ -15,6 +16,11 @@ s = ["status", "--no-pager"]
 C = '@+'
 P = '@-'
 "d(x)" = 'description(x)'
+
+[signing]
+backend = "ssh"
+key = "/home/deanr/.ssh/gitlab_rsa.pub"
+sign-all = true
 
 [user]
 name = "Dean Richer"

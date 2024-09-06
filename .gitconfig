@@ -1,6 +1,3 @@
-[user]
-	name = "Dean Richer"
-	email = dean.richer@complyadvantage.com
 [alias]
 	a = add
 	b = branch
@@ -35,12 +32,21 @@
 	od = !git remote show origin | sed -n "'/^  HEAD branch/ {s/.*: //p; q}'" | xargs git switch
 	# list all files currently ignored by git
 	show-ignored = ls-files -io --directory --exclude-standard
+[commit]
+	gpgsign = true
 [core]
 	editor = vim
 	excludesfile = /home/deanr/.gitignore
+[gpg]
+	format = ssh
+[pager]
+	branch = false
 [pull]
 	rebase = true
 [push]
 	default = upstream
-[pager]
-	branch = false
+[user]
+	email = dean.richer@complyadvantage.com
+	name = "Dean Richer"
+	signingKey = "/home/deanr/.ssh/gitlab_rsa.pub"
+	#signingKey = "BCE8DD19F7ABF1DCCB20CB197E57AA747FDE434E"
