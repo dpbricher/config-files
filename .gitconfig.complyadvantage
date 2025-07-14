@@ -1,0 +1,9 @@
+[commit]
+        gpgsign = true
+[gpg]
+        format = ssh
+[url "ssh://git@git.ivxs.uk/"]
+        insteadOf = https://git.ivxs.uk/
+[user]
+	email = dean.richer@complyadvantage.com
+	signingKey = "/home/deanr/.ssh/gitlab_rsa.pub"

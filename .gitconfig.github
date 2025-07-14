@@ -1,0 +1,6 @@
+[commit]
+        gpgsign = true
+[gpg]
+        format = ssh
+[user]
+	signingKey = "/home/deanr/.ssh/github_rsa.pub"

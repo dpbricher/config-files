@@ -1,0 +1,9 @@
+--when.repositories = [
+  "~/workspace/dpbricher/",
+  "~/workspace/dpbricher.config-files/",
+]
+
+[signing]
+backend = "ssh"
+behavior = "own"
+key = "/home/deanr/.ssh/github_rsa.pub"

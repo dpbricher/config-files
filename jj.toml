@@ -1,10 +1,11 @@
 [aliases]
-b = ["branch", "--no-pager"]
+b = ["bookmark", "--no-pager"]
 c = ["commit"]
 d = ["diff"]
 e = ["edit"]
 f = ["git", "fetch"]
 g = ["git"]
+gi = ["git", "init", "--colocate"]
 h = ["help"]
 l = ["log"]
 n = ["new"]
@@ -12,16 +13,26 @@ p = ["git", "push"]
 r = ["rebase"]
 s = ["status", "--no-pager"]
 
+blame = ["file", "annotate"]
+
+[merge-tools.difft]
+diff-args = ["--color=always", "--display=inline", "$left", "$right"]
+
 [revset-aliases]
 C = '@+'
+M = 'main'
 P = '@-'
 "d(x)" = 'description(x)'
 
-[signing]
-backend = "ssh"
-key = "/home/deanr/.ssh/gitlab_rsa.pub"
-sign-all = true
-
 [user]
 name = "Dean Richer"
-email = "dean.richer@complyadvantage.com"
+email = "dpbricher@gmail.com"
+
+[[--scope]]
+--when.commands = [
+  "diff",
+  "show",
+]
+
+[--scope.ui]
+diff-formatter = "difft"

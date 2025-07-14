@@ -32,13 +32,9 @@
 	od = !git remote show origin | sed -n "'/^  HEAD branch/ {s/.*: //p; q}'" | xargs git switch
 	# list all files currently ignored by git
 	show-ignored = ls-files -io --directory --exclude-standard
-[commit]
-	gpgsign = true
 [core]
 	editor = vim
-	excludesfile = /home/deanr/.gitignore
-[gpg]
-	format = ssh
+	excludesfile = ~/.gitignore
 [pager]
 	branch = false
 [pull]
@@ -46,7 +42,9 @@
 [push]
 	default = upstream
 [user]
-	email = dean.richer@complyadvantage.com
+	email = dpbricher@gmail.com
 	name = "Dean Richer"
-	signingKey = "/home/deanr/.ssh/gitlab_rsa.pub"
-	#signingKey = "BCE8DD19F7ABF1DCCB20CB197E57AA747FDE434E"
+[includeIf "gitdir:~/workspace/ivxs/"]
+	path = .gitconfig.complyadvantage
+[includeIf "gitdir:~/workspace/dpbricher/"]
+	path = .gitconfig.github

@@ -1,0 +1,18 @@
+--when.repositories = ["~/workspace/ivxs/"]
+
+[signing]
+backend = "ssh"
+behavior = "own"
+key = "/home/deanr/.ssh/gitlab_rsa.pub"
+
+[templates]
+# format that CA branch name rules will allow
+git_push_bookmark = '"DR-0-" ++ change_id.short()'
+
+[user]
+email = "dean.richer@complyadvantage.com"
+
+[[--scope]]
+--when.repositories = ["~/workspace/ivxs/gitlab.com/"]
+[--scope.signing]
+key = "/home/deanr/.ssh/gitlab.com_rsa.pub"
