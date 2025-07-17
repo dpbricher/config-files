@@ -17,33 +17,37 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle tmux
 
 # Load the theme.
-#antigen theme agnoster
 antigen theme robbyrussell
 
 # Tell antigen that you're done.
 antigen apply
 
 # aliases
-#unalias d
+unalias grep
 
 alias g="git"
+alias j="jj"
 
 alias mg="jump"
 alias ma="mark"
 alias md="unmark"
 alias ml="marks"
 
-alias o="xdg-open"
 alias d="docker"
-alias dc="docker-compose"
+alias dc="docker compose"
 alias k="kubectl"
-alias kk="kubectl krew"
+alias o="xdg-open"
 
-#export PATH="$PATH:${KREW_ROOT:-$HOME/.krew}/bin"
+alias ccd="pwd | xclip -selection clipboard"
+alias dls='docker ps --format "table {{.ID}}\t{{.Image}}\t{{.Status}}\t{{.Names}}"'
+alias dcls='docker compose ps --format "table {{.Name}}\t{{.Image}}\t{{.Service}}\t{{.Status}}\t{{.Ports}}"'
+
 export KUBECONFIG="$KUBECONFIG:/home/deanr/.kube/config"
 export XDG_CONFIG_HOME="$HOME/.xdg-config"
 
-export AWS_PG_ACCOUNT_ID=724201195915
-export AWS_STG_ACCOUNT_ID=998259592149
-export AWS_PRD_ACCOUNT_ID=899289360083
-export AWS_SPRD_ACCOUNT_ID=871716277715
+# enable buildkit for Docker
+export DOCKER_BUILDKIT=1
+# and for Docker Compose
+export COMPOSE_DOCKER_CLI_BUILD=1
+
+source ~/.kube-aliases.zsh
