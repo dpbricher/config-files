@@ -15,14 +15,19 @@ s = ["status", "--no-pager"]
 
 blame = ["file", "annotate"]
 
-[merge-tools.difft]
-diff-args = ["--color=always", "--display=inline", "$left", "$right"]
+[merge-tools]
+# aka vscode on ubuntu
+code.merge-args = ["--disable-extensions", "--sync=off", "--wait", "--merge", "$left", "$right", "$base", "$output"]
+difft.diff-args = ["--color=always", "--display=inline", "$left", "$right"]
 
 [revset-aliases]
 C = '@+'
 M = 'main'
 P = '@-'
 "d(x)" = 'description(x)'
+
+[ui]
+conflict-marker-style = "git"
 
 [user]
 name = "Dean Richer"
