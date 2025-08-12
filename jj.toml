@@ -1,7 +1,8 @@
 [aliases]
-b = ["bookmark", "--no-pager"]
+b = ["bookmark"]
 c = ["commit"]
 d = ["diff"]
+dt = ["diff", "--tool", "difft"]
 e = ["edit"]
 f = ["git", "fetch"]
 g = ["git"]
@@ -11,14 +12,21 @@ l = ["log"]
 n = ["new"]
 p = ["git", "push"]
 r = ["rebase"]
-s = ["status", "--no-pager"]
+s = ["status"]
+t = ["tag"]
 
 blame = ["file", "annotate"]
+# fetch latest remote and rebase current 'branch' onto main
+pm = ["util", "exec", "--", "sh", "-c", """
+set -e
+jj git fetch
+jj rebase --source 'latest((..main)+ & ..@)' --onto main
+""", ""]
 
 [merge-tools]
 # aka vscode on ubuntu
 code.merge-args = ["--disable-extensions", "--sync=off", "--wait", "--merge", "$left", "$right", "$base", "$output"]
-difft.diff-args = ["--color=always", "--display=inline", "$left", "$right"]
+difft.diff-args = ["--color=always", "$left", "$right"]
 
 [revset-aliases]
 C = '@+'
@@ -30,14 +38,5 @@ P = '@-'
 conflict-marker-style = "git"
 
 [user]
-name = "Dean Richer"
 email = "dpbricher@gmail.com"
-
-[[--scope]]
---when.commands = [
-  "diff",
-  "show",
-]
-
-[--scope.ui]
-diff-formatter = "difft"
+name = "Dean Richer"
